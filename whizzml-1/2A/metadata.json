@@ -1,0 +1,25 @@
+{
+    "name": "Exercise 2A (bigmler)",
+    "description": "Given two numbers, return two times the sum of first an second number.",
+    "kind": "script",
+    "source_code": "exercise_2A.whizzml",
+    "inputs": [
+        {
+            "name": "input0",
+            "type": "number",
+            "description": "The first number"
+        },
+        {
+            "name": "input1",
+            "type": "number",
+            "description": "The second number"
+        }        
+    ],
+    "outputs": [
+        {
+            "name": "output",
+            "type": "number",
+            "description": "Two times the sum of input0 and input1."
+        }
+    ]
+}

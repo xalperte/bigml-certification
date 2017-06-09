@@ -1,0 +1,26 @@
+(define (get-metric eval-id metric) 
+  (log-info "Getting the metric [" metric "] for evaluation [" eval-id "]")
+  ((fetch (wait eval-id)) ["result" "model" metric] "Not Available"))
+
+(define (evaluate-source source-id)
+  (let (_ (log-info "Creating the train and test datasets") 
+        [train-id test-id] (create-dataset-split source-id 0.8 "random_seed_2030290239039023")
+        model-id (create-model train-id)
+        _ (log-info "The model trained is " model-id)
+        eval-id (create-evaluation model-id test-id)
+        _ (log-info "The evaluation made is " eval-id))
+    [model-id (get-metric eval-id "accuracy")]))
+
+(define (evaluate-sources sources-id)
+  (log-info "Evaluating the following sources: " sources-id)
+  (loop (sources sources-id result [])
+        (cond 
+          (empty? sources) result
+          (let (source-id (head sources)
+                _ (log-info "Evaluate source: " source-id)
+                source-eval (evaluate-source source-id)
+                _ (log-info "Source evaluation result: " source-eval))
+            (recur (tail sources) 
+                      (append result source-eval))))))
+
+(define result (evaluate-sources sources-id))

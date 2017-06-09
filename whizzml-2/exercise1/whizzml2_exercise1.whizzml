@@ -1,0 +1,12 @@
+(define (execute script-id inputs) 
+  (log-info "Inputs: " inputs)
+  (create-execution script-id {"inputs" inputs}))
+
+(define (find-script name)
+          ((last (list-scripts {"name" name})) "resource"))
+
+(define (get-result exec-id)
+  (log-info "Obtain the result from Execution: " exec-id)
+  (fetch (wait exec-id)))
+
+(define result (get-result (execute (find-script script-name) script-inputs)))

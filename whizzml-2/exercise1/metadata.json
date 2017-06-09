@@ -1,0 +1,25 @@
+{
+    "name": "Part 2 Exercise A (bigmler)",
+    "description": "Given the name of an script and its parameters, return the result of executing the script.",
+    "kind": "script",
+    "source_code": "whizzml2_exercise1.whizzml",
+    "inputs": [
+        {
+            "name": "script-name",
+            "type": "text",
+            "description": "The name of the script to execute"
+        },
+        {
+            "name": "script-inputs",
+            "type": "list",
+            "description": "The parameters of the script"
+        }        
+    ],
+    "outputs": [
+        {
+            "name": "result",
+            "type": "map",
+            "description": "The result of the execution."
+        }
+    ]
+}

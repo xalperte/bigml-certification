@@ -1,0 +1,20 @@
+{
+    "name": "Part 2 Exercise 2",
+    "description": "Given a list of sources, we return the accuracy of evaluating the model of each source.",
+    "kind": "script",
+    "source_code": "whizzml2_exercise2.whizzml",
+    "inputs": [
+        {
+            "name": "sources-id",
+            "type": "list",
+            "description": "A list of sources"
+        }
+    ],
+    "outputs": [
+        {
+            "name": "result",
+            "type": "list",
+            "description": "A list of evaluations for the sources in the form of a list of pairs [evaluation-id accuracy]"
+        }
+    ]
+}

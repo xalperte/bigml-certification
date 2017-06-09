@@ -1,0 +1,14 @@
+;; Given a source a new dataset is being created, a 45% sample
+;;  of the previous dataset created, a model using the sample 
+;;  dataset and finally a batch prediction returning the id
+;;  of the batch prediction
+(define (create-batch-prediction source-id)
+  (log-info (str "Creating a dataset from the source: " source-id))
+  (let (dataset-id (create-dataset source-id)
+        sampled-dataset-id (create-dataset dataset-id { "sample_rate" 0.45})
+        model-id (create-model sampled-dataset-id))
+    (create-batchprediction model-id sampled-dataset-id)))
+
+
+(define output-batchprediction-id
+  (wait (create-batch-prediction source-id)))

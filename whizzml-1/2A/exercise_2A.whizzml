@@ -1,0 +1,9 @@
+(define (exercise_2A input0 input1) 
+  (when (not (number? input0))
+    (raise { "message" "The input0 is not a number" "code" -100}))
+  (when (not (number? input1))
+    (raise { "message" "The input1 is not a number" "code" -100}))
+  (* 2 (+ input0 input1)))
+
+(define output
+  (exercise_2A input0 input1))
