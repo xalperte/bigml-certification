@@ -1,5 +1,5 @@
 {
-    "name": "Part 2 Exercise A (bigmler)",
+    "name": "Part 2 Exercise 1",
     "description": "Given the name of an script and its parameters, return the result of executing the script.",
     "kind": "script",
     "source_code": "whizzml2_exercise1.whizzml",
